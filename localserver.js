@@ -1,26 +1,47 @@
+let baseDir = __dirname,
+nodePath = require('path'),
+fileExt = nodePath.extname;
 var staticServer = require('http').createServer((req, res)=>{
-	let path = '/index.html'
-		if (req.url!='/'){
-			path = 	req.url;
-			if(req.url.match('css'))
-				res.writeHead(200, { 'Content-Type': 'text/css' });
-			if(req.url.match('js'))
-				res.writeHead(200, { 'Content-Type': 'text/javascript' });
-			if(req.url.match('svg'))
-				res.writeHead(200, { 'Content-Type': 'image/svg+xml' });//type="image/"
-			if(req.url.match('ico'))
-				res.writeHead(200, { 'Content-Type': 'image/x-icon' });
+	let path = '';
+		 if (req.url!='/'){
+			path = 	nodePath.join(baseDir,req.url);
+			switch (fileExt(path)){
+			case '.css':
+			res.writeHead(200, { 'Content-Type': 'text/css' });
+			break;
+			case '.js':
+			res.writeHead(200, { 'Content-Type': 'text/javascript' });
+			break;
+			case '.ico':
+			res.writeHead(200, { 'Content-Type': 'image/x-icon' });
+			break;
+			case '.svg':
+			res.writeHead(200, { 'Content-Type': 'image/svg+xml' });
+			break;
+			case '.html':
+			res.writeHead(200, { 'Content-Type': 'text/html' });
+			break;
+			default:	
+			res.writeHead(200, { 'Content-Type': 'text/plain' });
+			}
 		}else {
+			//check if another dir or a .html was supplied in command line meant to serve
+			path = nodePath.join(baseDir,process.argv[2]?process.argv[2]:''
+				,process.argv[2] && process.argv[2].match(/.+\.html/g)?'':'/index.html');
 			res.writeHead(200, { 'Content-Type': 'text/html' });
 		}
-	console.log(path);
+	
 	let fs = require('fs');
 	try{
-		let buffer = fs.readFileSync('./dist'+path);
-		res.end(buffer);
+		let stream = fs.createReadStream(path);
+		stream.on('error',function(e) {
+            res.writeHead(404);
+            res.end();
+       });
+		stream.pipe(res);
 	}catch (e){
 		res.writeHead(404, { 'Content-Type': 'text/plain' });
-		res.end('this resourse is not existing');
+		res.end();
 	}
 	
 }).listen(8888,()=>{

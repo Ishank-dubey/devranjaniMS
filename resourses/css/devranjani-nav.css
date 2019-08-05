@@ -74,7 +74,7 @@ h1.menu-heading{display:inline-block;float:right;}
 
 .devranjani-menu-three.rotate {
   transform: rotate(45deg);
-  top: -1px;
+  /*top: -1px;*/
 }
 .menu-icon > .hide{display:none;}
 @media only screen and (max-width: 185px){

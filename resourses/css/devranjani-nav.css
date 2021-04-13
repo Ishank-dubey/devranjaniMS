@@ -1,7 +1,7 @@
 #container{
 	background-color:#f5f5f5;
 }
-.nav-image{display:inline-block;background-image:url("../img/make-transparent-small.png");width:112px;height:59px;}
+.nav-image{display:inline-block;width:112px;height:59px;}
 .nav{
 	z-index:11;
 	height:59px;
@@ -74,7 +74,6 @@ h1.menu-heading{display:inline-block;float:right;}
 
 .devranjani-menu-three.rotate {
   transform: rotate(45deg);
-  /*top: -1px;*/
 }
 .menu-icon > .hide{display:none;}
 @media only screen and (max-width: 185px){
@@ -85,7 +84,7 @@ h1.menu-heading{display:inline-block;float:right;}
 @media only screen and (min-width: 768px) {
 	.menu-logo{text-align: left;float: none;}
 	.menu-icon{display:none;}
-	.nav-image{display:inline-block;background-image:url("../img/make-transparent.png");width:224px;height:117px;}
+	.nav-image{display:inline-block;width:224px;height:117px;}
 	.nav{height:117px;background-color:#fff;}
 	ul{overflow:hidden;}
 	ul a{color:black;font-size:17px;text-decoration: none;display:table-cell;height:117px;vertical-align:middle;padding-top:0; }

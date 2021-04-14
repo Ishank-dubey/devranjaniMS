@@ -6,6 +6,7 @@ html, body, * {
 	-webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    font-size: 16px;	
 }
 img {vertical-align: middle;}
 .transform-arrow{
@@ -18,7 +19,7 @@ img {vertical-align: middle;}
 }
 .two > header {
 	background: #2E1811;
-    background-image: url(https://labs.jensimmons.com/2016/examples/images/dirt.jpg);
+    background-image: url(../img/dirt.jpg);
     background-size: cover;
     padding: 2rem 0;
     color: #fff;
@@ -99,12 +100,27 @@ box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)/*-2px -1
 	font-size:3rem;
 	line-height: 3rem;
     padding: 2rem 0 2rem 0rem;
+    font-family:  'OpenSans-SemiBold';
+}
+.italic-header{
+	font-size: 2rem;
+	font-family: 'OpenSans-SemiBold';
+	padding-top: 1rem;
+}
+.club-icon{
+	max-width:200px;
 }
 .pullText{
 	font-family: 'OpenSans-Regular';
-	font-size: 1rem;
-	line-height: 1.6em;
-    text-indent: 1em;
+	font-size: 1.1rem;
+	line-height: 1.5rem;
+    text-indent: 1rem;
+}
+article > .pullText{
+	text-indent:0;
+}
+article{
+	border-top: 1px solid rgba(0, 0, 0, 0.7);
 }
 .two, .text, footer{
     font-size: .85rem;
@@ -179,7 +195,7 @@ box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)/*-2px -1
     }
     h2{
     font-size: 3rem;
-    text-align:center;
+    text-align:left;
     }
     .footer-fb-image{width:30px;height:30px;transition:all .25s;}
 }

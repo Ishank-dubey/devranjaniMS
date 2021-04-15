@@ -152,6 +152,10 @@ article > .pullText{
     text-align:left;
     } 
     .padding{
+      word-break: break-word;
+      white-space: normal;
+    }
+    .padding{
       padding-left:.5rem;
       padding-right:.5rem;
     }

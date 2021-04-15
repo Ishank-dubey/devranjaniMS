@@ -50,8 +50,10 @@ h1.menu-heading{display:inline-block;float:right;}
     margin-right: 15px;
     margin-top: 10px;
     cursor:pointer;
-    width:30;
+    width:33px;
     height:33px;
+    background-color:transparent;
+    border:0;
     }
 .menu-icon > span{
 	display:block;
@@ -66,11 +68,12 @@ h1.menu-heading{display:inline-block;float:right;}
 .menu-logo{overflow: hidden;margin-right:5%;}
 .devranjani-menu-one.rotate {
   transform: rotate(-45deg);
-  top: 11px;
+  transform-origin: 16px 2.5px;
 }
 
 .devranjani-menu-three.rotate {
   transform: rotate(45deg);
+  transform-origin: 27px -3px;
 }
 .menu-icon > .hide{display:none;}
 @media only screen and (max-width: 185px){

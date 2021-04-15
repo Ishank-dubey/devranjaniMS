@@ -8,6 +8,51 @@ html, body, * {
     font-family: 'OpenSans-Regular';
     font-size: 14.5px;	
 }
+.go{
+	font-size:2rem;
+	position:absolute;
+}
+.trumpet{
+	animation-delay: 1s;
+	left:10%;
+}
+.guitar{
+	animation-delay: 1.5s;
+	left:20%;
+}
+.keyboard{
+	animation-delay: 2s;
+	left:40%;
+}
+.note{
+	animation-delay: 2.5s;
+	left:60%;
+}
+.drum{
+	animation-delay: 3s;
+	left:80%;
+}
+.violin{
+	animation-delay: 3.5s;
+	left:90%;
+}
+.go{
+  animation-name: mymove;
+  animation-duration: 20s;
+  animation-timing-function: ease;
+  animation-iteration-count: 4;
+}
+@keyframes mymove {
+  0% {
+  top: 0%;
+  display:inline-block;
+  }
+  
+  100%  {
+   top:100%;
+   display:none;
+  }
+}
 img {vertical-align: middle;}
 .transform-arrow{
 	transform:rotate(180deg);

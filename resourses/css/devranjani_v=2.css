@@ -2,7 +2,6 @@ html, body, * {
 	padding:0;
 	margin:0;
 	box-sizing: border-box;
-	font-family: Arial,serif,sans-serif;
 	-webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -12,6 +11,9 @@ html, body, * {
 img {vertical-align: middle;}
 .transform-arrow{
 	transform:rotate(180deg);
+}
+.font-style{
+	font-style: normal;
 }
 .three_new{
 	margin: 1rem auto;
@@ -69,32 +71,7 @@ section {
 .heading{
  position: relative;	
 }
-/*#slider{
-	position: relative;
-	height:400px;
-	background-image: url(../img/wmd1.jpg);
-	background-size: cover;
-	background-position:top left;
-	background-origin: content-box;
-	background-repeat:no-repeat;
-}
 
-#slider_text{
-	position:relative;
-	color:white;
-	background-color:#5f5f5f;
-	text-align: center;
-	background-attachment: fixed;
-}
-#slider_image{
-	width:100%;
-}
-*/
-.shadow{
--webkit-box-shadow:0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
--moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)/*-2px -1px 9px 2px rgba(0,0,0,0.75)*/;
-}
 
 .center_align{
 	width:100%;

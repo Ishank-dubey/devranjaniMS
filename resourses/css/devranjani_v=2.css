@@ -52,7 +52,7 @@ html, body, * {
   }
   
   100%  {
-   top:90%;
+   top:100%;
    display:none;
   }
 }
@@ -90,6 +90,7 @@ img {vertical-align: middle;}
 	position: relative;
 	max-width: 2000px;
     margin: 0 auto;
+    overflow:hidden;
 }
 
 footer{

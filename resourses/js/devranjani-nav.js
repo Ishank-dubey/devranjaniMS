@@ -1,15 +1,4 @@
 (function(){
-	/*var styletotest = "content";
-
-	if (styletotest in document.getElementsByClassName('nav-image')[0].style)
-	{
-	    
-
-	} else {
-
-	     
-
-	}*/
 	  function toggleView(){
 		  document.getElementsByClassName('devranjani-menu-one')[0].classList.toggle('rotate');
 		  document.getElementsByClassName('devranjani-menu-three')[0].classList.toggle('rotate');

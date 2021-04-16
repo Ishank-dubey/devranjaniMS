@@ -15,28 +15,28 @@ html, body, * {
 }
 
 .trumpet{
-	animation-delay: 1s;
+	animation-delay: 0s;
 	left:10%;
 }
 
 .guitar{
-	animation-delay: 1.5s;
+	animation-delay: 0.5s;
 	left:20%;
 }
 .keyboard{
-	animation-delay: 2s;
+	animation-delay: 1.0s;
 	left:40%;
 }
 .note{
-	animation-delay: 2.5s;
+	animation-delay: 1.5s;
 	left:60%;
 }
 .drum{
-	animation-delay: 3s;
+	animation-delay: 2.0s;
 	left:80%;
 }
 .violin{
-	animation-delay: 3.5s;
+	animation-delay: 2.5s;
 	left:90%;
 }
 .go{
@@ -55,6 +55,24 @@ html, body, * {
    top:100%;
    display:none;
   }
+}
+.gallery-container{
+  columns: 12.5rem;
+  break-inside: avoid;
+  margin-right: 1.25rem;
+  padding: 0;
+}
+.gallery-image{
+	width: 100%;
+  display: block;
+  object-fit: cover;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  box-shadow: 1px 3px 8px rgba(0,0,0,0.5);
+}
+.gallery-container li{
+	list-style-type:none;
 }
 img {vertical-align: middle;}
 .transform-arrow{

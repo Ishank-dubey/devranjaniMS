@@ -41,7 +41,7 @@ html, body, * {
 }
 .go{
   animation-name: mymove;
-  animation-duration: 20s;
+  animation-duration: 35s;
   animation-timing-function: ease;
   top:0;
 }
@@ -176,8 +176,14 @@ section {
     text-indent: 1rem;
 }
 article > .pullText{
-	text-indent:0;
 	overflow:hidden;
+}
+.page-a{
+	color:rgba(0, 0, 0, .1);
+	text-decoration: none;
+}
+.page-a:hover{
+	color:gray;
 }
 .bt{
 	border-top: 1px solid rgba(0, 0, 0, 0.7);
@@ -229,6 +235,9 @@ article > .pullText{
 @media only screen and (min-width: 768px) {
 html, body, * {
 	font-size: 16px;
+}
+.go{
+  animation-duration: 20s;
 }
 .padding{
       padding-left:0rem;

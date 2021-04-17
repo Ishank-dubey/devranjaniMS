@@ -73,6 +73,7 @@ html, body, * {
   margin-bottom: 20px;
   border: 1px solid black;
   box-shadow: 1px 3px 8px rgba(0,0,0,0.5);
+  cursor: pointer;
 }
 .gallery-container li{
 	list-style-type:none;
@@ -235,6 +236,80 @@ article > .pullText{
       padding-left:.5rem;
       padding-right:.5rem;
     }
+    .larger-photo-container{
+       position: fixed;
+       background-color: rgba(0,0,0,.5);
+       top: 0;
+       bottom: 0;
+       z-index: 12;
+       width: 100%;
+       padding: 2rem;
+    }
+    .larger-photo{
+       width:100%;
+       max-width: 100%;
+       max-height: calc(100% - 4.5rem);
+       display: block;
+       margin: 0 auto;
+       object-fit: contain;
+    }
+    .img-description-common{
+      width: 100%;
+      max-width:100%;
+      color:#000;
+      margin: 0 auto;
+      padding-top:.5rem;
+    }
+    .img-p-bottom{
+      bottom:0;
+      text-align:center;
+    }
+    .img-p-top{
+      top:0;
+      text-align:right;
+    }
+    .bundle{
+      overflow-y: auto;
+      background-color: #fff;
+      position: absolute;
+      border-radius: 1%;
+      max-width:1350px;
+      width: 100%;
+      max-height:85%;
+      height:auto;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      border: 1px gray solid;
+    }
+    .next-slide, .back-slide{
+      position:absolute;
+      top:50%;
+      transform: translateY(-50%);
+      display:inline-block;
+      border:0;
+      background-color: rgba(0,0,0,.5);
+      width:2.9rem;
+      height:2.9rem;
+      color:#fff;
+      cursor: pointer;
+    }
+    .next-slide{
+      right:1px;
+    }
+    .back-slide{
+      left:1px;
+    }
+    
+    .larger-photo{
+       /*animation-name: slide;
+       animation-duration: 2s;
+       animation-timing-function: ease;
+       animation-iteration-count: 1;
+       animation-delay: 0s;*/
+       transition: opacity .5s;
+    }
+ 
 @media only screen and (min-width: 768px) {
 html, body, * {
 	font-size: 16px;
@@ -246,4 +321,11 @@ html, body, * {
       padding-left:0rem;
       padding-right:0rem;
     }
+    .larger-photo{
+       max-width: 90%;
+       }
+       
+      .bundle{
+        height:90%;
+      }
 }

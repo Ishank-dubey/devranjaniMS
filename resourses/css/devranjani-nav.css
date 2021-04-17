@@ -60,6 +60,36 @@ h1.menu-heading{display:inline-block;float:right;}
     background-color:transparent;
     border:0;
     }
+    .menu-icon-slide{
+    display:inline-block;
+    cursor:pointer;
+    width:33px;
+    height:33px;
+    background-color:transparent;
+    border:0;
+    }
+    
+    .menu-icon-slide > span{
+	display:block;
+	position:relative;
+	width:30px;
+	height:3px;
+	background-color:#000;
+	margin-top:8px;
+}
+
+.devranjani-menu-one.rotate, .devranjani-menu-one-slide.rotate {
+  transform: rotate(-45deg);
+  transform-origin: 16px 2.5px;
+}
+
+.devranjani-menu-three.rotate, .devranjani-menu-three-slide.rotate {
+  transform: rotate(45deg);
+  transform-origin: 27px -3px;
+}
+    
+    
+    
 .menu-icon > span{
 	display:block;
 	position:relative;

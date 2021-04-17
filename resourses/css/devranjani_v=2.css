@@ -56,6 +56,9 @@ html, body, * {
    display:none;
   }
 }
+.selected-border{
+	border: #900 1px solid;
+}
 .gallery-container{
   columns: 12.5rem;
   break-inside: avoid;

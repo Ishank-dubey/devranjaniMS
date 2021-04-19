@@ -75,6 +75,13 @@ html, body, * {
   box-shadow: 1px 3px 8px rgba(0,0,0,0.5);
   cursor: pointer;
 }
+.watsapp{
+	display:inline-block;
+	text-decoration: none;
+	color:#000;
+	padding:5px;
+}
+
 .gallery-container li{
 	list-style-type:none;
 }
@@ -84,6 +91,7 @@ img {vertical-align: middle;}
 }
 .font-style{
 	font-style: normal;
+	font-size:1.1rem;
 }
 .three_new{
 	margin: 1rem auto;
@@ -107,8 +115,9 @@ img {vertical-align: middle;}
     font-kerning: normal;
     text-size-adjust: 100%;
 }
+
 .two > header.home-page{
-	background-image: url(../img/dirt.jpg);
+	background-image: linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.4)), url(../img/dirt.jpg);
 }
 header.home-page2{
 	background-image: linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.4)), 
@@ -344,6 +353,9 @@ html, body, * {
 }
 .go{
   animation-duration: 20s;
+}
+.two > header.home-page{
+	background-image: url(../img/dirt.jpg);
 }
 .padding{
       padding-left:0rem;

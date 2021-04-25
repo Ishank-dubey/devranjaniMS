@@ -192,7 +192,12 @@ a.event-link{
 	font-size: 1.1rem;
 	color: #0072ff;
 }
-
+a.event-link.pinkish{
+	color:#d800ff;
+}
+a.event-link.saffornish{
+	color:#ffa500;
+}
 .center_align{
 	width:100%;
 	margin-left: auto;

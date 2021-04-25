@@ -111,11 +111,7 @@ h1.menu-heading{display:inline-block;float:right;}
   transform-origin: 27px -3px;
 }
 .menu-icon > .hide{display:none;}
-@media only screen and (max-width: 767px){
-	BODY{
-	cursor:pointer;
-}
-}
+
 @media only screen and (max-width: 185px){
 	h1.menu-heading{
 	display:none;

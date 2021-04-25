@@ -85,6 +85,36 @@
     	
     	
     }
+    slideAnimation();
+    function slideAnimation() {
+    	var slides = d.getElementsByClassName('club-icon');	
+    	if(slides && slides[0] && isInViewport(slides[0])){
+    		setToGeneric(10, slides[0], 'slide-extreme');
+    	}
+        if(slides && slides[1] && isInViewport(slides[1])){
+        	setToGeneric(10, slides[1], 'slide-extreme');
+    	}
+        if(slides && slides[2] && isInViewport(slides[2])){
+        	setToGeneric(10, slides[2], 'slide-extreme');
+       }
+    }
+    d.addEventListener('scroll', function () {
+    	slideAnimation();
+    }, {
+        passive: true
+    });
+    function isInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+        		rect.top < window.innerHeight && rect.bottom >= 0
+
+        );
+    }
+
+    function setToGeneric(ms, node, className){
+    	if(node)
+    	setTimeout(function(){  node.classList.remove(className);}, ms);
+    }
     function insertPopOverInDOM (src, text) {
     	var container = document.getElementById('container');
     	var lcon = document.createElement("div");  

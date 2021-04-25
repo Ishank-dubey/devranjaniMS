@@ -207,9 +207,9 @@ a.event-link.saffornish{
 
 .ls {letter-spacing: 1px;}
 .pullquote{
-	font-size:3rem;
-	line-height: 3rem;
-    padding: 2rem 0 2rem 0rem;
+	font-size:2rem;
+	line-height: 2.1rem;
+    padding: 1rem 0 2rem 0rem;
     font-family:  'OpenSans-SemiBold';
 }
 
@@ -380,4 +380,9 @@ html, body, * {
       .bundle{
         height:80%;
       }
+      .pullquote{
+	font-size:3rem;
+	line-height: 3.1rem;
+    padding: 2rem 0 2rem 0rem;
+}
 }

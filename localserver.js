@@ -6,6 +6,9 @@ var staticServer = require('http').createServer((req, res)=>{
 		 if (req.url!='/'){
 			path = 	nodePath.join(baseDir,req.url);
 			switch (fileExt(path)){
+			case '.xml':
+			res.writeHead(200, { 'Content-Type': 'text/xml' });
+			break;
 			case '.css':
 			res.writeHead(200, { 'Content-Type': 'text/css' });
 			break;

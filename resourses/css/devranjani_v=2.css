@@ -8,6 +8,9 @@ html, body, * {
     font-family: 'OpenSans-Regular';
     font-size: 14.5px;	
 }
+html {
+  scroll-behavior: smooth;
+}
 .go{
 	font-size:2rem;
 	position:absolute;

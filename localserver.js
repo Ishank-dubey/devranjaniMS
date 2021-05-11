@@ -3,6 +3,7 @@ nodePath = require('path'),
 fileExt = nodePath.extname;
 var staticServer = require('http').createServer((req, res)=>{
 	let path = '';
+	
 		 if (req.url!='/'){
 			path = 	nodePath.join(baseDir,req.url);
 			switch (fileExt(path)){
@@ -23,6 +24,15 @@ var staticServer = require('http').createServer((req, res)=>{
 			break;
 			case '.html':
 			res.writeHead(200, { 'Content-Type': 'text/html' });
+			break;
+			case '.jpg':
+			res.writeHead(200, { 'content-Type': 'image/jpeg'});
+			break;
+			case '.png':
+			res.writeHead(200, { 'content-Type': 'image/png'});
+			break;
+			case '.gif':
+			res.writeHead(200, { 'content-Type': 'image/gif'});
 			break;
 			default:	
 			res.writeHead(200, { 'Content-Type': 'text/plain' });

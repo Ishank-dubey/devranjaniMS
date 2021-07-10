@@ -399,10 +399,7 @@ html, body, * {
 .two > header.home-page{
 	background-image: url(../img/dirt.jpg);
 }
-.padding{
-      padding-left:0rem;
-      padding-right:0rem;
-    }
+
     .larger-photo{
        max-width: 90%;
        }

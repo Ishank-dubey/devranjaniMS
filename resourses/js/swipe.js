@@ -3,15 +3,16 @@
 	var startX;
 	var oldLeft;
 	var right;
-	var isMousePressed = true;
+	var isMousePressed;
 	var currentPageNumber;
 	var theWidth = div.offsetWidth;
 	var allNavButtons = d.getElementsByClassName('swipe-button');
+	var timerId;
 	
-	  div.addEventListener("touchstart", handleStart, false);
-	  div.addEventListener("touchend", handleEnd, false);
-	  div.addEventListener("touchcancel", handleCancel, false);
-	  div.addEventListener("touchmove", handleMove, false);
+	  div.addEventListener("touchstart", handleStart, { capture: false, passive: true });
+	  div.addEventListener("touchend", handleEnd, { capture: false, passive: true });
+	  div.addEventListener("touchcancel", handleCancel, { capture: false, passive: true });
+	  div.addEventListener("touchmove", handleMove, { capture: false, passive: true });
 	  
 	  div.addEventListener("mousedown", handleMouseDown, false);
 	  div.addEventListener("mousemove", handleMouseMove, false);
@@ -81,6 +82,7 @@
 				distance > 0 ? right=true : right = false;
 				var newLeft = parseInt(oldLeft.replace('px', '')) + distance;
 				ul.style.left = newLeft+'px';
+				stop();
 			}
 		}
 	
@@ -91,7 +93,6 @@
 			currentPageNumber = (Math.abs(ul.style.left.replace('px','')/div.offsetWidth));
 			removePresentFromAll();
 			allNavButtons[currentPageNumber].classList.add('present');
-			
 		}
 		function mouseDownTouchStart(e){
 			startX = e.clientX || e.touches[0].clientX;
@@ -130,5 +131,21 @@
 				doneMoving();
 			},0);
 		}
+		function start() {
+			timerId = setInterval(function(){
+				var whereTo; 
+				if(currentPageNumber >= 3){
+					whereTo = 0;
+				}else {
+					whereTo = ++currentPageNumber;
+				}
+				move(-1*(whereTo) * theWidth);
+			}, 8000);
+		}
+		function stop() {
+			if(timerId)
+			clearInterval(timerId);
+		}
+		start();
 	
 })(document, window)

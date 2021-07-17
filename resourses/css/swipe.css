@@ -83,4 +83,7 @@ box-shadow: -0.5px -1px 1px #888;
                    width:100%;
                    font-family: 'OpenSans-SemiBold';
                 }
-				
+				li img{
+				 max-height:calc(100vh - 200px);
+				 object-fit:fill;
+				}

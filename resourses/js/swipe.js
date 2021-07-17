@@ -8,6 +8,7 @@
 	var theWidth = div.offsetWidth;
 	var allNavButtons = d.getElementsByClassName('swipe-button');
 	var timerId;
+	var timerIdWhenMoved;
 	
 	  div.addEventListener("touchstart", handleStart, { capture: false, passive: true });
 	  div.addEventListener("touchend", handleEnd, { capture: false, passive: true });
@@ -35,6 +36,7 @@
 	  function navButtonClicked(e){
 		  if(parseInt(e.target.innerText)){
 			  move(-1*(parseInt(e.target.innerText) - 1) * theWidth);
+			  manualInterventionStop();
 		  }
 		  e.stopPropagation();
 	  }
@@ -71,6 +73,13 @@
 			}
 		isMousePressed = false;
 	  }
+	  function manualInterventionStop(){
+		  stop();
+			if(timerIdWhenMoved)
+			clearTimeout(timerIdWhenMoved);
+			
+			timerIdWhenMoved = setTimeout(start, 5000);
+	  }
 	  
 	  function mouseMoveTouchMove(e){
 			if(isMousePressed){
@@ -82,7 +91,7 @@
 				distance > 0 ? right=true : right = false;
 				var newLeft = parseInt(oldLeft.replace('px', '')) + distance;
 				ul.style.left = newLeft+'px';
-				stop();
+				manualInterventionStop();
 			}
 		}
 	

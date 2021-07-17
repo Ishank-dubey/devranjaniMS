@@ -155,6 +155,10 @@
 			if(timerId)
 			clearInterval(timerId);
 		}
+		setTimeout(function(){
+			move(-1 * theWidth);	
+		}, 2000);
+		
 		start();
 	
 })(document, window)

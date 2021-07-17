@@ -3,7 +3,7 @@
 	<url>
 		<loc>https://www.devranjani.com/</loc>
 		<lastmod>2021-04-21</lastmod>
-		<priority>0.8</priority>
+		<priority>1</priority>
 		<changefreq>monthly</changefreq>
 	</url>
 	<url>
@@ -20,7 +20,7 @@
 	<url>
 		<loc>https://www.devranjani.com/gallery.html</loc>
 		<lastmod>2021-04-21</lastmod>
-		<priority>0.8</priority>
+		<priority>1</priority>
 		<changefreq>monthly</changefreq>
 	</url>
 	<url>
@@ -37,10 +37,6 @@
 	</url>
 	<url>
 		<loc>https://www.devranjani.com/contact.html</loc>
-		<lastmod>2021-04-21</lastmod>
-	</url>
-	<url>
-		<loc>https://www.devranjani.com/news.html</loc>
 		<lastmod>2021-04-21</lastmod>
 	</url>
 	<url>

@@ -149,7 +149,7 @@
 					whereTo = ++currentPageNumber;
 				}
 				move(-1*(whereTo) * theWidth);
-			}, 8000);
+			}, 6000);
 		}
 		function stop() {
 			if(timerId)

@@ -43,7 +43,7 @@ box-shadow: -0.5px -1px 1px #888;
 				   background-color:white;
 				}
 				.animate{
-				    transition: all .2s linear;
+				    transition: all .5s ease-out;
 				}
 				.swipe figure{
 				  margin:0;

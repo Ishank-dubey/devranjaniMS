@@ -1,13 +1,14 @@
 (function(d){
-	var next_slide = document.getElementsByClassName('next-slide')[0];
+	//var next_slide = document.getElementsByClassName('next-slide')[0];
+	//var back_slide = document.getElementsByClassName('back-slide')[0];
     var timerId;
-    if(next_slide) {
-    	next_slide.addEventListener('click', function () {
-    		animateAndChange('./resourses/img/Dada.jpeg');
-    	});
-    }
-    function animateAndChange(src) {
+    var whatImage;
+    var isGallery;
+    var isNews;
+    
+    function animateAndChange(src, text) {
     	var larger_photo = document.getElementsByClassName('larger-photo')[0];
+    	var larger_text = document.getElementsByClassName('img-p-bottom')[0];
 		larger_photo.style.opacity = "0.0";
 		if(timerId) {
 			clearTimeout(timerId);
@@ -15,29 +16,51 @@
 		timerId = setTimeout(function(){
     		larger_photo.style.opacity = "1.0";
     		larger_photo.setAttribute('src', src);
+    		larger_text.innerText = text;
     	}, 500);
     }
-    var gallery_images = document.getElementsByClassName('gallery-image')[0];
-    if(gallery_images){
-    	gallery_images.addEventListener('click', function(){
-    		popOverOpenClose(true);
-    	});
+    var gallery_images = document.getElementsByClassName('gallery-image');
+    var news_images = document.getElementsByClassName('news-image');
+    for(var i=0;i < gallery_images.length;i++){
+    	if(gallery_images[i]){
+        	gallery_images[i].addEventListener('click', openGallery);
+        }	
     }
+    for(var i=0;i < news_images.length;i++){
+    	if(news_images[i]){
+    		news_images[i].addEventListener('click', openNews);
+        }	
+    }
+    function openGallery(e) {
+    	isGallery = true;
+    	isNews = false;
+    	whatImage = e.currentTarget.dataset.num;
+    	popOverOpenClose(true, e);
+    }
+    function openNews(e) {
+    	isGallery = false;
+    	isNews = true;
+    	whatImage = e.currentTarget.dataset.num;
+    	popOverOpenClose(true, e);
+    }
+    
     var menu_icon_slide = document.getElementsByClassName('menu-icon-slide')[0];
     if(menu_icon_slide){
     	menu_icon_slide.addEventListener('click', function(){
     		popOverOpenClose();
     	});
     }
-    function popOverOpenClose(open) {
+    function popOverOpenClose(open, e) {
     	if(open){
-    		insertPopOverInDOM('./resourses/img/Dada.jpeg', 
-    				'Devi Sarasvati Devi Sarasvati Devi Sarasvati Devi Sarasvati Devi Sarasvati Devi Sarasvati ');
+    		insertPopOverInDOM(e.currentTarget.getAttribute('src'), 
+    				e.currentTarget.getAttribute('alt'));
+    		d.body.style.overflowY = 'hidden';
     	}else {
     		var larger_photo_container = document.getElementsByClassName('larger-photo-container')[0];
     		if(larger_photo_container){
     			larger_photo_container.parentNode.removeChild(larger_photo_container);
     		}
+    		d.body.style.overflowY = 'auto';
     	}
     	
     	
@@ -72,6 +95,41 @@
     function setToGeneric(ms, node, className){
     	if(node)
     	setTimeout(function(){  node.classList.remove(className);}, ms);
+    }
+    function goNext() {
+    	var image;
+		whatImage++;
+		if(isGallery){
+			if(whatImage > 37){
+				whatImage = 1;
+			}
+			image = gallery_images[whatImage-1 ];
+		} else{
+			if(whatImage > 12){
+				whatImage = 1;
+			}
+			image = news_images[whatImage-1 ];
+		}
+		
+		
+		animateAndChange(image.getAttribute('src'), image.getAttribute('alt'));
+    }
+    function goBack(){
+    	var image;
+		whatImage--;
+		if(isGallery){
+			if(whatImage < 1){
+				whatImage = 37;
+			}
+			image = gallery_images[whatImage-1 ];
+		} else{
+			if(whatImage < 1){
+				whatImage = 12;
+			}
+			image = news_images[whatImage-1 ];
+		}
+		
+		animateAndChange(image.getAttribute('src'), image.getAttribute('alt'));
     }
     function insertPopOverInDOM (src, text) {
     	var container = document.getElementById('container');
@@ -129,7 +187,11 @@
     	button.focus();
     	
     	next.addEventListener('click', function() {
-    		animateAndChange('https://scontent.fdel17-1.fna.fbcdn.net/v/t31.18172-8/1598568_588345161253611_1402758850_o.jpg?_nc_cat=100&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=ObxI9O1AM1wAX-WO_l_&_nc_ht=scontent.fdel17-1.fna&oh=e279866569c77ec026d6454936574395&oe=60A1839F');
+    		goNext();
+    	});
+    	
+    	back.addEventListener('click', function() {
+    		goBack();
     	});
     	button.addEventListener('click', function() {
     		popOverOpenClose();

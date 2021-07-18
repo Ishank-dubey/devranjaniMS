@@ -63,12 +63,12 @@ html {
 	border: #900 1px solid;
 }
 .gallery-container{
-  columns: 12.5rem;
+  columns: 4.5rem;
   break-inside: avoid;
   margin-right: 1.25rem;
   padding: 0;
 }
-.gallery-image{
+.gallery-image, .news-image{
 	width: 100%;
   display: block;
   object-fit: cover;
@@ -375,5 +375,8 @@ html, body, * {
 .pullquote.less-font{
 	font-size:1.5rem;
 	line-height: 1.6rem;
+}
+.gallery-container{
+  columns: 12.5rem;
 }
 }

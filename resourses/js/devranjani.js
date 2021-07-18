@@ -200,9 +200,9 @@
     		if(e.keyCode === 27) {
     			popOverOpenClose();
     		} else if (e.keyCode === 39){
-    			animateAndChange('https://scontent.fdel17-1.fna.fbcdn.net/v/t1.6435-9/83341420_2829718553782916_624269102722056192_n.jpg?_nc_cat=102&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=bCiQj_lIEAIAX8F65Ew&_nc_ht=scontent.fdel17-1.fna&oh=634acdf4cfb3f96e23744a4f956b30c3&oe=609EF223');
+    			goNext();
     		} else if(e.keyCode === 37) {
-    			animateAndChange('https://scontent.fdel17-1.fna.fbcdn.net/v/t31.18172-8/1598568_588345161253611_1402758850_o.jpg?_nc_cat=100&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=ObxI9O1AM1wAX-WO_l_&_nc_ht=scontent.fdel17-1.fna&oh=e279866569c77ec026d6454936574395&oe=60A1839F');
+    			goBack();
     		}
     	});
     }

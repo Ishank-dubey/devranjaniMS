@@ -9,6 +9,8 @@
 	var allNavButtons = d.getElementsByClassName('swipe-button');
 	var timerId;
 	var timerIdWhenMoved;
+	var resizeId;
+	var defaultTImerId;
 	
 	  div.addEventListener("touchstart", handleStart, { capture: false, passive: true });
 	  div.addEventListener("touchend", handleEnd, { capture: false, passive: true });
@@ -19,6 +21,18 @@
 	  div.addEventListener("mousemove", handleMouseMove, false);
 	  div.addEventListener("mouseup", handleMouseUp, false);
 	  div.addEventListener("mouseout", handleMouseOut, false);
+	  
+	  w.addEventListener('resize', function(){
+		  if(resizeId){
+			  clearTimeout(resizeId);
+		  }
+		  resizeId = setTimeout(function(){
+			  theWidth = div.offsetWidth;
+			  move(0);
+			  
+		  }, 200);
+		  
+	  });
 	  addClickEvent();
 	  
 	  
@@ -152,10 +166,12 @@
 			}, 6000);
 		}
 		function stop() {
+			if(defaultTImerId)
+			clearTimeout(defaultTImerId);	
 			if(timerId)
 			clearInterval(timerId);
 		}
-		setTimeout(function(){
+		defaultTImerId = setTimeout(function(){
 			move(-1 * theWidth);	
 		}, 2000);
 		

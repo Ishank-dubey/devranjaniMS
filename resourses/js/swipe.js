@@ -11,6 +11,9 @@
 	var timerIdWhenMoved;
 	var resizeId;
 	var defaultTImerId;
+	var anchorStartX;
+	var anchorEndX;
+	var anchorSwipeFlag = false;
 	
 	  div.addEventListener("touchstart", handleStart, { capture: false, passive: true });
 	  div.addEventListener("touchend", handleEnd, { capture: false, passive: true });
@@ -34,11 +37,54 @@
 		  
 	  });
 	  addClickEvent();
+	  attachAnchors();
+	  
 	  
 	  
 	  function removePresentFromAll() {
 		  for(var i=0;i < allNavButtons.length;i++){
 			  allNavButtons[i].classList.remove('present');
+		  }
+	  }
+	  function preventClick(e) {
+			  if(anchorSwipeFlag){
+				  e.preventDefault();
+			  }	  
+	  }
+	  function handleAnchorStart(evt){
+		  if(evt.clientX){
+			  anchorStartX = evt.clientX;
+		  } else if(evt.touches && evt.touches.length){
+			  anchorStartX = evt.touches[0].clientX;
+		  } else {
+			  anchorStartX =0;
+		  }
+	  }
+	  function handleAnchorEnd(evt){
+		  if(evt.clientX){
+			  anchorEndX = evt.clientX;
+		  } else if(evt.touches && evt.touches.length){
+			  anchorEndX = evt.touches[0].clientX;
+		  } else {
+			  anchorEndX =0;
+		  }
+		    if(Math.abs(anchorStartX - anchorEndX) < 1 ){
+	    		  anchorSwipeFlag = false;	  
+	    	  }else {
+	    		  anchorSwipeFlag = true;
+	    	  }  
+	  }
+	  function attachAnchors() {
+		  var anchors = document.getElementsByClassName("showanchor");
+		  for(var i=0;i < anchors.length;i++){
+			  var anchor = anchors[i];
+			  anchor.addEventListener('click', preventClick);
+			  
+			  anchor.addEventListener('mousedown', handleAnchorStart);
+              anchor.addEventListener('mouseup', handleAnchorEnd);
+              
+              anchor.addEventListener('touchstart', handleAnchorStart);
+              anchor.addEventListener('touchend', handleAnchorEnd);
 		  }
 	  }
 	  function addClickEvent() {
